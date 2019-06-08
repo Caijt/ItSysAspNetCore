@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.0" />
+    <PackageReference Include="LinqKit.Core" Version="1.1.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.2.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ItSys.Common\ItSys.Common.csproj" />
+    <ProjectReference Include="..\ItSys.DTO\ItSys.Dto.csproj" />
+    <ProjectReference Include="..\ItSys.EntityFramework\ItSys.EntityFramework.csproj" />
+    <ProjectReference Include="..\ItSys.Entity\ItSys.Entity.csproj" />
+  </ItemGroup>
+</Project>

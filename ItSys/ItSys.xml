@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ItSys</name>
+    </assembly>
+    <members>
+        <member name="T:ItSys.ApiGroup.ApiGroupAttribute">
+            <summary>
+            系统分组特性
+            </summary>
+        </member>
+        <member name="T:ItSys.ApiGroup.ApiGroupNames">
+            <summary>
+            系统分组枚举值
+            </summary>
+        </member>
+        <member name="T:ItSys.ApiGroup.GroupInfoAttribute">
+            <summary>
+            系统模块枚举注释
+            </summary>
+        </member>
+        <member name="T:ItSys.Controllers.AuthController">
+            <summary>
+            用户认证
+            </summary>
+        </member>
+        <member name="M:ItSys.Controllers.AuthController.ValidateGetToken">
+            <summary>
+            验证登录名及密码获取token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ItSys.Controllers.AuthController.GetUserInfo">
+            <summary>
+            根据token获取用户信息及菜单数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ItSys.Controllers.Sys.UserController">
+            <summary>
+            用户管理
+            </summary>
+        </member>
+        <member name="M:ItSys.Controllers.Sys.UserController.Add">
+            <summary>
+            增加用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ItSys.Controllers.Sys.UserController.GetById(System.Int32)">
+            <summary>
+            根据id查找用户
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ItSys.Controllers.TestController">
+            <summary>
+            测试类
+            </summary>
+        </member>
+    </members>
+</doc>
