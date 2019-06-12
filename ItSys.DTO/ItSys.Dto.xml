@@ -4,6 +4,26 @@
         <name>ItSys.Dto</name>
     </assembly>
     <members>
+        <member name="P:ItSys.Dto.IQueryDto.pageSize">
+            <summary>
+            每页数量
+            </summary>
+        </member>
+        <member name="P:ItSys.Dto.IQueryDto.currentPage">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="P:ItSys.Dto.IQueryDto.orderProp">
+            <summary>
+            排序字段
+            </summary>
+        </member>
+        <member name="P:ItSys.Dto.IQueryDto.orderDesc">
+            <summary>
+            是否倒序排序
+            </summary>
+        </member>
         <member name="T:ItSys.Dto.ResultDto">
             <summary>
             Api执行结果模型

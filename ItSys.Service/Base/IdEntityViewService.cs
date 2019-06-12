@@ -12,6 +12,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ItSys.Service
 {
+    /// <summary>
+    /// Id实体服务层，具有主键的实体
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
+    /// <typeparam name="TViewEntity"></typeparam>
+    /// <typeparam name="TDto"></typeparam>
+    /// <typeparam name="TCreateDto"></typeparam>
+    /// <typeparam name="TUpdateDto"></typeparam>
+    /// <typeparam name="TQueryDto"></typeparam>
     public abstract class IdEntityViewService<
         TEntity,
         TViewEntity,

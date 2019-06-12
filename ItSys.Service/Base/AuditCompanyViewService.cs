@@ -10,6 +10,15 @@ using System.Text;
 
 namespace ItSys.Service
 {
+    /// <summary>
+    /// 审计及所属公司服务层，默认会对数据过滤所属公司Company_id字段
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
+    /// <typeparam name="TViewEntity"></typeparam>
+    /// <typeparam name="TDto"></typeparam>
+    /// <typeparam name="TCreateDto"></typeparam>
+    /// <typeparam name="TUpdateDto"></typeparam>
+    /// <typeparam name="TQueryDto"></typeparam>
     public class AuditCompanyViewService<TEntity, TViewEntity, TDto, TCreateDto, TUpdateDto, TQueryDto>
         : AuditViewService<TEntity, TViewEntity, TDto, TCreateDto, TUpdateDto, TQueryDto>
         where TEntity : AuditCompanyEntity, new()

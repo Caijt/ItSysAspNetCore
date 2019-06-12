@@ -11,6 +11,12 @@ using System.Text;
 
 namespace ItSys.Service
 {
+    /// <summary>
+    /// 视图查询服务层
+    /// </summary>
+    /// <typeparam name="TViewEntity"></typeparam>
+    /// <typeparam name="TDto"></typeparam>
+    /// <typeparam name="TQueryDto"></typeparam>
     public class ViewService<TViewEntity, TDto, TQueryDto>
         where TViewEntity : class, new()
         where TQueryDto : IQueryDto
@@ -19,7 +25,11 @@ namespace ItSys.Service
         protected IQueryable<TViewEntity> dbQuery;
         protected IMapper mapper;
         protected AuthContext authContext;
+        /// <summary>
+        /// 实体转化为Dto对象的表达式
+        /// </summary>
         protected Expression<Func<TViewEntity, TDto>> selectExpression { get; set; }
+
         /// <summary>
         /// 是否开启所属公司过滤功能
         /// </summary>
@@ -76,6 +86,8 @@ namespace ItSys.Service
             }
             return query.Skip((queryParams.currentPage - 1) * queryParams.pageSize).Take(queryParams.pageSize);
         }
+
+        
 
         protected IQueryable<TViewEntity> buildQuery(TQueryDto queryParams)
         {

@@ -12,6 +12,15 @@ using ItSys.Common;
 
 namespace ItSys.Service
 {
+    /// <summary>
+    /// 审计服务层，实体具有相关审计字段，默认会对这些字段进行配置
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
+    /// <typeparam name="TViewEntity"></typeparam>
+    /// <typeparam name="TDto"></typeparam>
+    /// <typeparam name="TCreateDto"></typeparam>
+    /// <typeparam name="TUpdateDto"></typeparam>
+    /// <typeparam name="TQueryDto"></typeparam>
     public abstract class AuditViewService
         <TEntity, TViewEntity, TDto, TCreateDto, TUpdateDto, TQueryDto> :
         IdEntityViewService<TEntity, TViewEntity, TDto, TCreateDto, TUpdateDto, TQueryDto>

@@ -40,6 +40,9 @@ namespace ItSys.Service
         /// </summary>
         protected Action<TEntity, TUpdateDto> onAfterUpdate { get; set; }
 
+        protected Action<TEntity> onBeforeDelete { get; set; }
+        protected Action<TEntity> onAfterDelete { get; set; }
+
         public EntityViewService(ItSysDbContext dbContext, IMapper mapper) : base(dbContext, mapper)
         {
             this.dbSet = dbContext.Set<TEntity>();
@@ -181,8 +184,16 @@ namespace ItSys.Service
 
         public virtual void Delete(TEntity entity)
         {
+            if (onBeforeDelete != null)
+            {
+                onBeforeDelete(entity);
+            }
             dbSet.Remove(entity);
             dbContext.SaveChanges();
+            if (onAfterDelete != null)
+            {
+                onAfterDelete(entity);
+            }
         }
     }
     public abstract class EntityViewService<TEntity, TViewEntity, TDto, TSaveDto, TQueryDto> : EntityViewService<TEntity, TViewEntity, TDto, TSaveDto, TSaveDto, TQueryDto>
@@ -206,5 +217,5 @@ namespace ItSys.Service
     /// <typeparam name="TDto"></typeparam>
     /// <typeparam name="TSaveDto"></typeparam>
     /// <typeparam name="TQueryDto"></typeparam>
-    
+
 }
