@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using ItSys.ApiGroup;
 using ItSys.EntityFramework;
+using Microsoft.Extensions.Logging;
 
 namespace ItSys.Controllers
 {
@@ -20,19 +21,17 @@ namespace ItSys.Controllers
     {
         private const string Separator = ",";
         private readonly ItSysDbContext _dbContext;
-        public TestController(ItSysDbContext dbContext)
+        private readonly ILogger<TestController> _logger;
+        public TestController(ItSysDbContext dbContext,ILogger<TestController> logger)
         {
             _dbContext = dbContext;
+            _logger = logger;
         }
         [HttpPost]
         [AllowAnonymous]
         public IActionResult Test()
         {
-            //var a = from r in _dbContext.SysRoles
-            //        let b = r.MenuIds.()
-            //        from c in b
-            //        select c;
-            //return Ok(a.ToList());
+            _logger.LogInformation("hehe");
             return Ok();
 
         }

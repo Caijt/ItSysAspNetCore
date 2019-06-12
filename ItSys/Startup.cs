@@ -48,6 +48,7 @@ namespace ItSys
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            
             #region 认证授权
             services.AddAuthorization(options =>
             {
@@ -235,7 +236,7 @@ namespace ItSys
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env,ILoggerFactory loggerFactory)
         {
             //#region 跨域
             //app.UseCors("All");
