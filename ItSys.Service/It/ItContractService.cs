@@ -247,34 +247,5 @@ namespace ItSys.Service
             });
             return unitDataList;
         }
-
-
-//IT资产查询列表方法
-public List<ItContractDto> GetList(ItContractQueryDto queryParams)
-{
-    var query = dbContext.Set<ItContract>().AsQueryable();
-
-    query = query.Include(e => e.CreateUser).Include(e=>e.Supplier);
-
-    #region 合同编号
-    if (!string.IsNullOrWhiteSpace(queryParams.no))
-    {
-        query = query.Where(e => e.no.Contains(queryParams.no));
-    }
-    #endregion
-    #region 合同名称
-    if (!string.IsNullOrWhiteSpace(queryParams.name))
-    {
-        query = query.Where(e => e.name.Contains(queryParams.name));
-    }
-    #endregion
-    return query.Select(e => new ItContractDto
-    {
-        no = e.no,
-        name = e.name,
-        id = e.Id
-    })
-    .ToList();
-}
     }
 }

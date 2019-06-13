@@ -231,47 +231,6 @@ namespace ItSys.Service
                 price = g.Sum(e => e.price)
             };
         }
-//IT资产查询列表方法
-public List<ItAssetDto> GetList(ItAssetQueryDto queryParams)
-{
-    var query = dbContext.Set<ItAsset>().AsQueryable();
-
-    query = query.Include(e => e.CreateUser);
-
-    #region 资产编号
-    if (!string.IsNullOrWhiteSpace(queryParams.no))
-    {
-        query = query.Where(e => e.no.Contains(queryParams.no));
-    }
-    #endregion
-    #region 资产型号
-    if (!string.IsNullOrWhiteSpace(queryParams.model))
-    {
-        query = query.Where(e => e.no.Contains(queryParams.model));
-    }
-    #endregion
-    #region 标识号
-    if (!string.IsNullOrWhiteSpace(queryParams.diy_no))
-    {
-        query = query.Where(e => e.diy_no.Contains(queryParams.diy_no));
-    }
-    #endregion
-    if (queryParams.sortOrder == "no")
-    {
-        query = query.OrderBy(e => e.no);
-    }
-    if (queryParams.sortOrder == "inbound_date")
-    {
-        query = query.OrderBy(e => e.inbound_date);
-    }
-    return query.Select(e => new ItAssetDto
-    {
-        no = e.no,
-        inbound_date = e.inbound_date,
-        id = e.Id
-    })
-    .ToList();
-}
 
         public List<dynamic> GetPropList(string prop, string keyword)
         {
